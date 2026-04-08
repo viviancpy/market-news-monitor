@@ -40,11 +40,6 @@ class MarketTools:
         Sends a high-priority alert to the user's WhatsApp when a
         significant market event is detected.
         """
-        # --- MOCK MODE: remove this block when running against real Twilio ---
-        print(f"\n[MOCK WHATSAPP] Would have sent: DATA LOUNGE ALERT: {alert_text}")
-        return "WhatsApp Sent (MOCK). SID: MOCK123"
-        # --- END MOCK ---
-
         client = Client(os.getenv('TWILIO_ACCOUNT_SID'), os.getenv('TWILIO_AUTH_TOKEN'))
         message = client.messages.create(
             from_=os.getenv('TWILIO_PHONE_NUMBER'),

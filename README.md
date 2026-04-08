@@ -37,8 +37,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```bash
-cp .env.example .env
-nano .env
+vi .env
 ```
 
 Fill in your credentials:
@@ -64,7 +63,7 @@ STARROCKS_DB=your_database_name
 
 ```bash
 source .venv/bin/activate
-python main.py
+python3 main.py
 ```
 
 The monitor runs every 5 minutes automatically.
