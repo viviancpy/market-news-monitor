@@ -34,8 +34,14 @@ def create_tasks():
     )
 
     t2 = Task(
-        description="Search for news related to the results of Task 1. If movement is > 2%, send a WhatsApp alert.",
-        expected_output="A summary of the news and a confirmation of the WhatsApp alert status.",
+        description=(
+            "Search for news related to the price movement from Task 1. "
+            "If movement is > 2%, send a WhatsApp alert that includes: "
+            "1) the percentage change and current price, "
+            "2) a 2-3 sentence news summary explaining WHY the price moved. "
+            "The news summary MUST be included inside the WhatsApp message itself."
+        ),
+        expected_output="A confirmation that the WhatsApp alert was sent, including the full message text with news summary.",
         agent=analyst,
         context=[t1]
     )
