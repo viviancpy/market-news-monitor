@@ -13,12 +13,6 @@ class MarketTools:
         Executes a SQL query on StarRocks to analyze live Crypto and FX data.
         Use this to check for price movements, averages, or volatility.
         """
-        # --- MOCK MODE: remove this block when running against real StarRocks ---
-        return [
-            {"symbol": "BTC/EUR", "latest_price": 87500.00, "avg_5min_price": 85000.00, "pct_change": 2.94}
-        ]
-        # --- END MOCK ---
-
         connection = pymysql.connect(
             host=os.getenv('STARROCKS_HOST'),
             port=9030,
